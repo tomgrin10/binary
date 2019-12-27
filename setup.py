@@ -3,9 +3,12 @@ from setuptools import setup, find_packages
 with open('README.md') as f:
     description = f.read()
 
+with open('VERSION') as f:
+    version = f.read()
+
 setup(
     name='binary-core',
-    version='0.1',
+    version=version,
     license='MIT',
     description=description,
     author='Tom Gringauz',
