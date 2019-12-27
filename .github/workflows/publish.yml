@@ -1,0 +1,18 @@
+name: Publish to PyPi
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: pypi-publish
+      uses: pypa/gh-action-pypi-publish@v1.0.0a0
+      with:
+        # PyPI user
+        user: __token__
+        # Password for your PyPI user or an access token
+        password: ${{ secrets.pypi_password }}
