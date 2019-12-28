@@ -16,7 +16,9 @@ setup(
     url='https://github.com/tomgrin10/binary-core',
     packages=find_packages(),
     install_requires=[
-        'six'
+        'six',
+        'typing',
+        'enum34'
     ],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
