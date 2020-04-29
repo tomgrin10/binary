@@ -186,7 +186,7 @@ version = "2.3.1"
 [[package]]
 category = "dev"
 description = "scandir, a better directory iterator and faster os.walk()"
-marker = "python_version == \"2.7\" or python_version == \"3.3\" or python_version == \"2.7\" or python_version == \"3.3\""
+marker = "python_version == \"2.7\" or python_version == \"3.3\" or python_version in \"2.6 2.7 3.2 3.3\""
 name = "scandir"
 optional = false
 python-versions = "*"
@@ -201,7 +201,7 @@ python-versions = "*"
 version = "0.8.1"
 
 [[package]]
-category = "dev"
+category = "main"
 description = "Python 2 and 3 compatibility utilities"
 name = "six"
 optional = false
@@ -276,7 +276,7 @@ python-versions = "*"
 version = "0.5"
 
 [metadata]
-content-hash = "629231deb5ecfcbe9c6aa10a5598f975c6ea5ae82ea0b6cc88fa1eab156e0532"
+content-hash = "69c328ad9f27929d8e292bc6d27a4423e956206eeb9f7d22eade52b9dd132336"
 python-versions = "~2.7 || ^3.4"
 
 [metadata.files]
