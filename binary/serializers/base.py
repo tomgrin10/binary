@@ -1,8 +1,8 @@
 from abc import ABCMeta, abstractmethod
 from io import BytesIO
+from typing import Any, Optional
 
 import six
-from typing import Any, Optional
 
 __all__ = ['BaseSerializer']
 

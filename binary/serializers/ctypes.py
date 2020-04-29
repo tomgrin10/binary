@@ -1,11 +1,10 @@
 import struct
-from io import BufferedIOBase
-
 from enum import Enum
-from typing import Any, Optional
+from io import BufferedIOBase
+from typing import Any, Optional, Union
 
-from binary_core.serializers import BaseSerializer
-from binary_core.struct_consts import (
+from binary.serializers import BaseSerializer
+from binary.struct_consts import (
     ENDIAN_NATIVE, ENDIAN_LITTLE, ENDIAN_BIG, ENDIAN_NETWORK, INT8_SIGNED,
     INT8_UNSIGNED, INT16_SIGNED, INT16_UNSIGNED, INT32_SIGNED, INT32_UNSIGNED,
     INT64_SIGNED, INT64_UNSIGNED, FLOAT, DOUBLE
@@ -24,11 +23,14 @@ class Endian(Enum):
 
 
 class _StructSerializer(BaseSerializer):
-    __struct_format__ = NotImplemented  # type: int
+    __struct_format__ = NotImplemented  # type: Union[str, NotImplemented]
 
     def __init__(self):
         # type: () -> None
-        self.compiled_struct = struct.Struct(self.__struct_format__)
+        if self.__struct_format__ is NotImplemented:
+            raise NotImplementedError('Serializer has no __struct_format__ set.')
+
+        self.compiled_struct = struct.Struct(ENDIAN_LITTLE + self.__struct_format__)
 
     def to_bytes(self, obj):
         # type: (Any) -> bytes

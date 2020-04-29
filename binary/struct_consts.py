@@ -14,4 +14,3 @@ INT64_UNSIGNED = 'Q'
 
 FLOAT = 'f'
 DOUBLE = 'd'
-
